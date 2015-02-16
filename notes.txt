@@ -27,6 +27,15 @@ Maintenant on va le soumettre (à condition d'avoir fait un git config et d'avoi
 >git commit -m "Mon commentaire pour expliquer mon commit"
 
 
+http://teach.github.com for more videos and training materials
+
+Now on poste sur le réseau !!!
+
+D'abord on cree le repo dans github
+puis on l'ajoute
+>git remote add origin https://github.com/manorstudio/gitTraining.git
+>git push -u origin master
+
 BEST PRACTICES
 ===============
 Faire des branches specifiques (une par idee : ie authentication_refoactoring)
