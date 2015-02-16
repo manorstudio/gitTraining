@@ -1,3 +1,5 @@
+COMMENCER
+=========
 Ce fichier constitue mes notes sur la video d'intro : https://www.youtube.com/watch?v=U8GBXvdmHT4
 
 >git ini [projet] 
@@ -36,8 +38,33 @@ puis on l'ajoute
 >git remote add origin https://github.com/manorstudio/gitTraining.git
 >git push -u origin master
 
+Maintenant on bosse
+Quand on veux soumettre un travail :
+>git status
+>git add [liste des fichiers à ajouter au commit]
+>git commit -m "Le commentaire qui explique"
+>git push
+
+attention par default il faut dire a git si on veux utiliser le mode simple
+pour ça on fait
+>git config --global push.default simple
+sinon git push va demander un tas de trucs chiants
+
+il y a aussi des outils graphiques pour suivre tout ça
+gitk sous linux
+gitmac ...
+mais on fera des notes sur les gui plus tard !
+
+AUTRES TRUCS :
+==============
+PARTICIPER A UN REPO EXISTANT
+-----------------------------
+C'est un peu l'objet de git : la participation
+il y aura d'autre note pour ça
+voyez le fichier participate.txt
+
 BEST PRACTICES
-===============
+--------------
 Faire des branches specifiques (une par idee : ie authentication_refoactoring)
 
 
