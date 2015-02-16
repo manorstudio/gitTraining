@@ -1,0 +1,34 @@
+Ce fichier constitue mes notes sur la video d'intro : https://www.youtube.com/watch?v=U8GBXvdmHT4
+
+>git ini [projet] 
+
+commences un projet dans (PATH) home/guillaume
+un projet consiste en un repertoire et un repertoire imbriqué .git
+
+> tree .git |more
+donnes la structure de .git
+
+>git status
+au début ne donnera rien mais en pratique donnera les chagements effectués sur le projet
+
+aller dans le dossier [projet]
+> vim [mon_premier_fichier] 
+et entrez qq chose puis faites un
+>git status
+
+Maintenant on vois le fichier dans un status non suivi
+on le rajoute
+>git add [mon_premier_fichier]
+Maintenant
+>git status 
+considère comme un nouveau fichier [mon_premier_fichier]
+
+Maintenant on va le soumettre (à condition d'avoir fait un git config et d'avoir au moins un compte sur gitHub)
+>git commit -m "Mon commentaire pour expliquer mon commit"
+
+
+BEST PRACTICES
+===============
+Faire des branches specifiques (une par idee : ie authentication_refoactoring)
+
+
