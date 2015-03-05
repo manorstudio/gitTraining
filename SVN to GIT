@@ -44,5 +44,5 @@ git log -n2
 
 Publishing the content into GitHub
 ==================================
-git remote add origin git@github.com:manorstudio/Crayons.git
-git push -u origin master
+git remote add crayons https://github.com/manorstudio/crayons.git
+git push -u crayons master
