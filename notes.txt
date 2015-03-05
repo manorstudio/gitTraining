@@ -55,6 +55,12 @@ gitk sous linux
 gitmac ...
 mais on fera des notes sur les gui plus tard !
 
+Le mot ORIGIN dans puch est une convention
+Si on en abuse on aura des erreurs "already exist fatal .."
+Pour nettoyer tout ça
+git remote rm origin
+
+
 AUTRES TRUCS :
 ==============
 PARTICIPER A UN REPO EXISTANT
