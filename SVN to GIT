@@ -2,12 +2,42 @@ From SVN to GIT
 ===============
 
 Notes from tutorial : 
+
+Getting the SVN repository simply with history of commits only
+===============================================================
 git svn clone svn://zone.spip.org/spip-zone/_plugins_/crayons
 Please note you can import only a directory not the full svn repository
 
 cd crayons
 git log
-You can see all the history of commits here
+You can see all the history of commits here.
+
+
+Getting the SVN repository simply with history of commits and authors
+======================================================================
+You would need to get the authors list in a file from  the svn logs. You need to do this prior to make the import.
+
+Here is an helpfull script for doing so
+authors=$(svn log -q svn://zone.spip.org/spip-zone/_plugins_/crayons | grep -e '^r' | awk 'BEGIN { FS = "|" } ; { print $2 }' | sort | uniq)
+for author in ${authors}; do
+  echo "${author} = ${author%@*} <${author}>";
+done
+
+Copy and paste the output into a file (let's call it SVNAuthors)
+Take time to review the authors to ensure they have github acconts
+
+Now let's import the svn with authors
+git svn --authors-file=SVNAuthors clone svn://zone.spip.org/spip-zone/_plugins_/crayons
+
+Let's check the result
+git log -n2
+
+(Optional) Cleaning the commits
+===============================
+This method kept the svn ID, you may want to get rid of those references (if your SVN is private)
+This command will clean those references
+
+git filter-branch --msg-filter 'sed -e "/git-svn-id:/d"'
 
 
 
