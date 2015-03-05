@@ -2,6 +2,11 @@ From SVN to GIT
 ===============
 
 Notes from tutorial : 
+http://technicalpickles.com/posts/creating-a-svn-authorsfile-when-migrating-from-subversion-to-git/
+https://gist.github.com/lyrixx/3782266
+http://git-scm.com/docs/git-svn
+
+
 
 Getting the SVN repository simply with history of commits only
 ===============================================================
@@ -27,22 +32,35 @@ Copy and paste the output into a file (let's call it SVNAuthors)
 Take time to review the authors to ensure they have github acconts
 
 Now let's import the svn with authors
-git svn --authors-file=SVNAuthors clone svn://zone.spip.org/spip-zone/_plugins_/crayons
+git svn --authors-file=SVNAuthors clone svn://zone.spip.org/spip-zone/_plugins_/crayons  --no metadata
 
 Let's check the result
+cd crayons
 git log -n2
 
-(Optional) Cleaning the commits
-===============================
+(Optional) cleaning comments
+-------------------------------
 This method kept the svn ID, you may want to get rid of those references (if your SVN is private)
 This command will clean those references without changing the history.
 
 git filter-branch --msg-filter 'sed -e "/git-svn-id:/d"'
 
 Let's check the result
+cd crayons
 git log -n2
 
+The option no-metadata is not recomended
+
+
 Publishing the content into GitHub
-==================================
+----------------------------------
 git remote add crayons https://github.com/manorstudio/crayons.git
 git push -u crayons master
+
+In case you have branches 
+-------------------------
+
+
+Let's check the result
+git branch -r
+
