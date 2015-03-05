@@ -1,0 +1,13 @@
+From SVN to GIT
+===============
+
+Notes from tutorial : 
+git svn clone svn://zone.spip.org/spip-zone/_plugins_/crayons
+Please note you can import only a directory not the full svn repository
+
+cd crayons
+git log
+You can see all the history of commits here
+
+
+
