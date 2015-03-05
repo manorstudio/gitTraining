@@ -35,9 +35,14 @@ git log -n2
 (Optional) Cleaning the commits
 ===============================
 This method kept the svn ID, you may want to get rid of those references (if your SVN is private)
-This command will clean those references
+This command will clean those references without changing the history.
 
 git filter-branch --msg-filter 'sed -e "/git-svn-id:/d"'
 
+Let's check the result
+git log -n2
 
-
+Publishing the content into GitHub
+==================================
+git remote add origin git@github.com:manorstudio/Crayons.git
+git push -u origin master
